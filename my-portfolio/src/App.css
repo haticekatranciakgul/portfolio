@@ -45,6 +45,7 @@ a {
 }
 a:hover {
   opacity: 50%!important;
+  cursor: pointer;
 }
 a:focus, a:active {
   outline: none; /* Odaklanan kenar çizgisi kaldırılır */
