@@ -12,7 +12,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+import Avatar from '@mui/material/Avatar';
+
 
 const Navbar = () => {
     const theme = useTheme();
@@ -50,13 +51,12 @@ const Navbar = () => {
                             textDecoration: 'none',
                         }}
                     >
-                        <img
-                            component="img"
-                            height="auto"
-                            src='./favicon.ico'
-                            alt='logo' width={'30px'}
-                            sx={{ borderRadius: '10px' }}
-                        />
+                         <Avatar
+                        alt="profilepic"
+                        src="/favicon.ico"
+                        sx={{ width: 90, height: 90, margin:'10px', display: { xs: 'none', md: 'flex', lg:'flex', xl:'flex' } }}
+                    />
+                       
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -99,7 +99,16 @@ const Navbar = () => {
 
                         </Menu>
                     </Box>
-                    <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+                   {/* // <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
+
+                  
+                    {/* <img
+                            component="img"
+                            height="auto"
+                            src='./favicon.ico'
+                            alt='logo' width={'30px'}
+                            sx={{ borderRadius: '10px', display: { xs: 'flex', md: 'none', lg:'none', xl:'none' } }}
+                        /> */}
                     <Typography
                         variant="h5"
                         noWrap
@@ -116,7 +125,11 @@ const Navbar = () => {
                             textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                          <Avatar
+                        alt="profilepic"
+                        src="/favicon.ico"
+                        sx={{ width: 100, height: 100, margin:'15px', display: { xs: 'flex', md: 'none', lg:'none', xl:'none' } }}
+                    />
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 

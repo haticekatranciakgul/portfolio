@@ -13,22 +13,23 @@ function HomeDetail() {
     return (
         <Box sx={{ flexGrow: 1, paddingTop: '20%' }}>
             <Grid container spacing={2}>
-                <Grid size={{ xs: 6, md: 4 }}>
+                <Grid size={{ xs: 12, md: 4 }}
+                sx={{
+                    display:'flex',
+                    justifyContent:'center',
+                    alignItems:'center'
+                }}
+                >
                     <Avatar
                         alt="profilepic"
                         src="./pic.jpeg"
                         sx={{ width: 300, height: 300 }}
                     />
                 </Grid>
-                <Grid size={{ xs: 6, md: 8 }}>
+                <Grid size={{ xs: 12, md: 8 }}>
                     <Typography sx={{ fontSize: '40px' }}>HATİCE AKGUL KATRANCI</Typography>
                     <Typography sx={{ fontSize: '35px' }}>FRONT-END DEVELOPER</Typography>
-                    {/* <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
-                    <FontAwesomeIcon icon={faHtml5} size="2xl" />
-                    <FontAwesomeIcon icon={faReact} size="2xl" />
-                    <FontAwesomeIcon icon={faCss3Alt} size="2xl" />
-                    <FontAwesomeIcon icon={faJs} size="2xl" /> 
-                </Box> */}
+                    
 
                     <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
                         <Link to={'https://github.com/haticekatranciakgul'}>
