@@ -155,6 +155,47 @@ function Project() {
             </CardActions>
           </Card>
         </Grid>
+        <Grid size={{ xs: 6, md: 4 }}>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardHeader
+              avatar={
+                <Avatar alt="profilepic"
+                  src="./weathericon.png"
+                  sx={{ width: 30, height: 30 }}>
+
+                </Avatar>
+              }
+              action={
+                <IconButton aria-label="settings">
+                  <MoreVertIcon />
+                </IconButton>
+              }
+              title="React Weather App"
+              subheader="04.2024"
+            />
+            <CardMedia
+              component="img"
+              height="194"
+              image="./weatherapp.png"
+              alt="Rick and Morty"
+            />
+            <CardContent>
+              <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                React 
+              </Typography>
+            </CardContent>
+            <CardActions disableSpacing>
+              <IconButton aria-label="add to favorites">
+                <FavoriteIcon />
+              </IconButton>
+              <IconButton aria-label="share">
+                <Link to={'https://haticekatranciakgul.github.io/react-weather-app/'}>
+                  <GitHubIcon />
+                </Link>
+              </IconButton>
+            </CardActions>
+          </Card>
+        </Grid>
       </Grid>
     </Box>
   )
