@@ -6,27 +6,28 @@ import Divider from '@mui/material/Divider';
 import Experience from '../components/Experience';
 import { faReact, faCss3Alt, faHtml5, faJs, faBootstrap, faNpm, faVuejs } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useTranslation } from 'react-i18next'; 
+
 
 function About() {
+  const { t } = useTranslation(); 
+
   return (
     <Box sx={{ flexGrow: 1, paddingTop: '1%' }}>
       <Grid container spacing={2} sx={{ textAlign: 'start' }}>
         <Grid size={{ xs: 12, sm: 4, md: 4 }}>
-          <Typography variant='h4'>Özet</Typography>
+          <Typography variant='h5'>{t('Summary')}</Typography>
         </Grid>
         <Grid size={{ xs: 12, sm: 8, md: 8 }} >
-          <Typography variant='h5' sx={{paddingBottom: 2}}>HTML, CSS, JavaScript, Bootstrap, React.js, React Hooks, Redux, MUİ teknolojilerini etkin bir şekilde kullanabiliyorum.
-            Github, Docker, Kubernetes hakkında bilgi sahibiyim. API'ler ile entegrasyonları sağlamak ve veri akışını yönetebilirim.
-            Photoshop kullanabiliyorum.
-            Agile/Scrum metodolojileri hakkında bilgi sahibiyim. Yazılım geliştirme süreçlerinin her aşamasında etkin bir rol oynayarak, yaratıcı ve etkili çözümler sunmayı amaçlıyorum.
-            Takım çalışmasına uyumlu, sorumluluk sahibi ve öğrenmeye açığım.</Typography>
+          <Typography variant='h5' sx={{paddingBottom: 2}}>{t('I can effectively use HTML, CSS, JavaScript, Bootstrap, React.js, React Hooks, Redux, and MUI technologies.I have knowledge of GitHub, Docker, and Kubernetes. I can integrate APIs and manage data.I am proficient in Photoshop.I have knowledge of Agile and Scrum methodologies. My aim is to provide creative and effective solutions by actively participating in every stage of software development.I am team-oriented, responsible, and open to growth.')}
+          </Typography>
           <Divider />
         </Grid>
         <Grid size={{ xs: 12, sm: 4, md: 4 }}>
-          <Typography variant='h4'>Yetenek</Typography>
+          <Typography variant='h5'>{t('Skill')}</Typography>
         </Grid>
         <Grid size={{ xs: 12, sm: 8, md: 8 }}>
-          <Typography variant='h4'>
+          <Typography variant='h6'>
             <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, paddingBottom: 2 }}>
               <FontAwesomeIcon icon={faHtml5} size="2xl" />
               <FontAwesomeIcon icon={faReact} size="2xl" />
@@ -46,23 +47,21 @@ function About() {
           <Divider/>
         </Grid>
         <Grid size={{ xs: 12, sm: 4, md: 4 }}>
-          <Typography variant='h4'>Deneyim</Typography>
+          <Typography variant='h5'>{t('Experience')}</Typography>
         </Grid>
         <Grid size={{ xs: 12, sm: 8, md: 8 }}>
-          <Typography variant='h4'>
+          <Typography variant='h6'>
             <Experience></Experience>
             <Divider/>
           </Typography>
         </Grid>
         <Grid size={{ xs: 12, sm: 4, md: 4 }}>
-          <Typography variant='h4'>Eğitim</Typography>
+          <Typography variant='h5'>{t('Education')}</Typography>
         </Grid>
         <Grid size={{ xs: 12, sm: 8, md: 8 }}>
-          <Typography variant='h5'>İstanbul Yeni Yüzyıl Üniversitesi</Typography>
+          <Typography variant='h6'>{t('Istanbul Yeni Yuzyil Universty')}İstanbul Yeni Yüzyıl Üniversitesi</Typography>
         </Grid>
       </Grid>
-
-
     </Box>
   );
 }

@@ -6,9 +6,12 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import { Typography } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 
 function Experience() {
+    const { t } = useTranslation();
+
     return (
         <Timeline position="alternate">
             <TimelineItem>
@@ -18,7 +21,7 @@ function Experience() {
                 </TimelineSeparator>
                 <TimelineContent>
                     <Typography>
-                        Front-End Developer - Metro Holding
+                        {t('Front-End Developer - Metro Holding')}
                     </Typography>
                     <Typography>
                         02-2021 / 02-2024
@@ -33,7 +36,7 @@ function Experience() {
                 </TimelineSeparator>
                 <TimelineContent>
                     <Typography>
-                        Proje Mühendisi - Ser Elektrik
+                        {t('Project Engineer - Ser Electric Automation')}
                     </Typography>
                     <Typography>
                         03-2020 / 07-2020
@@ -46,8 +49,8 @@ function Experience() {
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent>
-                <Typography>
-                        Proje ve Satın Alma Mühendisi - Kontrolmatik Teknolojileri
+                    <Typography>
+                        {t('Project and Purchasing Engineer - Kontrolmatik Technologies')}
                     </Typography>
                     <Typography>
                         08-2018 / 02-2020
@@ -60,8 +63,8 @@ function Experience() {
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent>
-                <Typography>
-                       İhale Teklifi ve Satın Alma Mühendisi - Büyük Elektrik
+                    <Typography>
+                        {t('Sales and Tendering Engineer - Büyük Electrical')}
                     </Typography>
                     <Typography>
                         04-2018 / 07-2018
@@ -74,8 +77,8 @@ function Experience() {
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent>
-                <Typography>
-                       Teknik Servis Mühendisi - Demir Döküm
+                    <Typography>
+                        {t('Technical Service Engineer - Demir Döküm')}
                     </Typography>
                     <Typography>
                         06-2017 / 07-1017
@@ -88,8 +91,8 @@ function Experience() {
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent>
-                <Typography>
-                       Elektronik Bakım Mühendisi - Parkcam
+                    <Typography>
+                        {t('Electronics Maintenance Engineer - Parkcam')}
                     </Typography>
                     <Typography>
                         07-2017 / 08-2017
@@ -102,8 +105,8 @@ function Experience() {
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent>
-                <Typography>
-                       Yüksek Gerilim Mühendisi - Demirer Kablo
+                    <Typography>
+                    {t('Heavy Current Engineer - Demirer Cable')}
                     </Typography>
                     <Typography>
                         07-2016 / 08-2016
