@@ -17,6 +17,9 @@ import { useTranslation } from 'react-i18next';
 
 function ProjectCard() {
     const { t } = useTranslation(); 
+    const handleOpenLink = (url) => {
+        window.open(url, '_blank'); // Yeni sekmede aç
+    };
 
     const projects = useSelector(selectProjects);
     return (
@@ -54,7 +57,10 @@ function ProjectCard() {
                         <IconButton aria-label="add to favorites">
                             <FavoriteIcon />
                         </IconButton>
-                        <IconButton aria-label="share">
+                        <IconButton aria-label="share" 
+                            onClick={() => handleOpenLink(project.url)} 
+
+                        >
                             <GitHubIcon />
                         </IconButton>
                     </CardActions>
