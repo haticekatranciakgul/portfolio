@@ -21,7 +21,7 @@ function ProjectCard() {
     const projects = useSelector(selectProjects); // Projeleri al
 
     const sendEmail = (projectTitle) => {
-        emailjs.send('service_8ihennh', '__ejs-test-mail-service__', {
+        emailjs.send('service_8ihennh', 'template_0gylyjr', {
             message: `Favorite button has been clicked for ${projectTitle} project!`,
         }, 'wP4HyAXYbimySOdV1') 
         .then((response) => {
