@@ -7,7 +7,8 @@ export const projects = [
         image: "./rickandmorty.png",
         description: "React Redux MUI",
         avatar: "./rickmortyicon.png",
-        url: "https://haticekatranciakgul.github.io/react-redux-rick-morty-app/"
+        url: "https://haticekatranciakgul.github.io/react-redux-rick-morty-app/",
+        favoriteCount: 0,
     },
     {
         id: 2,
@@ -16,7 +17,8 @@ export const projects = [
         image: "./notesapp.png",
         description: "React Redux",
         avatar: "./redux.png",
-        url: "https://haticekatranciakgul.github.io/reduxnoteapp/"
+        url: "https://haticekatranciakgul.github.io/reduxnoteapp/",
+        favoriteCount: 0,
     },
     {
         id: 3,
@@ -25,7 +27,8 @@ export const projects = [
         image: "./billgates.png",
         description: "React Redux MUI",
         avatar: "./billgates.jpg",
-        url: "https://haticekatranciakgul.github.io/react-redux-spend-money/"
+        url: "https://haticekatranciakgul.github.io/react-redux-spend-money/",
+        favoriteCount: 0,
     },
     {
         id: 4,
@@ -34,6 +37,7 @@ export const projects = [
         image: "./weatherapp.png",
         description: "React",
         avatar: "./weathericon.png",
-        url: "https://haticekatranciakgul.github.io/react-weather-app/"
+        url: "https://haticekatranciakgul.github.io/react-weather-app/",
+        favoriteCount: 0,
     },
 ];

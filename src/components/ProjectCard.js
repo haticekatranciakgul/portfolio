@@ -10,18 +10,35 @@ import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { useSelector } from 'react-redux';
-import { selectProjects } from '../redux/projectSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectProjects, incrementFavoriteCount } from '../redux/projectSlice'; 
 import { useTranslation } from 'react-i18next';
-
+import emailjs from 'emailjs-com';
 
 function ProjectCard() {
     const { t } = useTranslation(); 
-    const handleOpenLink = (url) => {
-        window.open(url, '_blank'); // Yeni sekmede aç
+    const dispatch = useDispatch(); // Redux dispatch
+    const projects = useSelector(selectProjects); // Projeleri al
+
+    const sendEmail = (projectTitle) => {
+        emailjs.send('service_8ihennh', '__ejs-test-mail-service__', {
+            message: `Favorite button has been clicked for ${projectTitle} project!`,
+        }, 'wP4HyAXYbimySOdV1') 
+        .then((response) => {
+            console.log('Email sent successfully:', response.status, response.text);
+        }, (err) => {
+            console.error('Failed to send email:', err);
+        });
     };
 
-    const projects = useSelector(selectProjects);
+    const handleFavoriteClick = (project) => {
+        dispatch(incrementFavoriteCount(project.id)); 
+        sendEmail(project.title); 
+    };
+    if (!projects || projects.length === 0) {
+        return <div>No projects available</div>; // Proje yoksa göster
+    }
+
     return (
         <>
             {projects.map((project) => (
@@ -39,7 +56,7 @@ function ProjectCard() {
                                 <MoreVertIcon />
                             </IconButton>
                         }
-                       title={t(project.title)} 
+                        title={t(project.title)} 
                         subheader={project.date}
                     />
                     <CardMedia
@@ -50,24 +67,23 @@ function ProjectCard() {
                     />
                     <CardContent>
                         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                        {t(project.description)}
+                            {t(project.description)}
                         </Typography>
                     </CardContent>
                     <CardActions disableSpacing>
-                        <IconButton aria-label="add to favorites">
+                    <IconButton aria-label="add to favorites" onClick={() => handleFavoriteClick(project)}>
                             <FavoriteIcon />
+                            {project.favoriteCount > 0 && <span>{project.favoriteCount}</span>}
                         </IconButton>
                         <IconButton aria-label="share" 
-                            onClick={() => handleOpenLink(project.url)} 
-
-                        >
+                            onClick={() => window.open(project.url, '_blank')}>
                             <GitHubIcon />
                         </IconButton>
                     </CardActions>
                 </Card>
             ))}
         </>
-    )
+    );
 }
 
-export default ProjectCard
+export default ProjectCard;
