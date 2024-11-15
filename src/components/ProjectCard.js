@@ -14,11 +14,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectProjects, incrementFavoriteCount } from '../redux/projectSlice'; 
 import { useTranslation } from 'react-i18next';
 import emailjs from 'emailjs-com';
+import Grid from '@mui/material/Grid2';
 
 function ProjectCard() {
     const { t } = useTranslation(); 
-    const dispatch = useDispatch(); // Redux dispatch
-    const projects = useSelector(selectProjects); // Projeleri al
+    const dispatch = useDispatch(); 
+    const projects = useSelector(selectProjects); 
 
     const sendEmail = (projectTitle) => {
         emailjs.send('service_8ihennh', 'template_0gylyjr', {
@@ -36,13 +37,14 @@ function ProjectCard() {
         sendEmail(project.title); 
     };
     if (!projects || projects.length === 0) {
-        return <div>No projects available</div>; // Proje yoksa göster
+        return <div>No projects available</div>; 
     }
 
     return (
         <>
             {projects.map((project) => (
-                <Card key={project.id} sx={{ maxWidth: 345 }}>
+                <Grid size={4}>
+                     <Card key={project.id} >
                     <CardHeader
                         avatar={
                             <Avatar
@@ -81,6 +83,9 @@ function ProjectCard() {
                         </IconButton>
                     </CardActions>
                 </Card>
+
+                </Grid>
+               
             ))}
         </>
     );

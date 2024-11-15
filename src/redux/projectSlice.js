@@ -46,20 +46,28 @@ const projectSlice = createSlice({
             url: "https://haticekatranciakgul.github.io/react-weather-app/",
             favoriteCount: 0,
         },
+        {
+            id: 5,
+            title: "React Fintech App",
+            date: "11.2024",
+            image: "./fintech.png",
+            description: "React MUİ",
+            avatar: "./fintech.jpeg",
+            url: "https://haticekatranciakgul.github.io/fintech/",
+            favoriteCount: 0,
+        },
         ],
     },
     reducers: {
         incrementFavoriteCount: (state, action) => {
-            // action.payload'daki proje ID'sini kullanarak projeyi bul
             const project = state.projects.find(p => p.id === action.payload);
             if (project) {
-                project.favoriteCount += 1; // Favori sayısını artır
+                project.favoriteCount += 1; 
             }
         },
     },
 });
 
-// Export et
 export const { incrementFavoriteCount } = projectSlice.actions;
 export const selectProjects = (state) => state.projects.projects;
 export default projectSlice.reducer;

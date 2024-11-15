@@ -8,8 +8,12 @@ function Project() {
   return (
     <Box sx={{ flexGrow: 1, paddingTop: '5%' }}>
       <Grid container spacing={2}>
-        <ProjectCard/>
+       
+         <ProjectCard/>
+    
       </Grid>
+
+      
     </Box>
   )
 }
