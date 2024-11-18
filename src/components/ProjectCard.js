@@ -43,7 +43,7 @@ function ProjectCard() {
     return (
         <>
             {projects.map((project) => (
-                <Grid size={4}>
+                <Grid size={4} marginBottom={5}>
                     <Card key={project.id} >
                         <CardHeader
                             avatar={

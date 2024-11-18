@@ -13,7 +13,7 @@ function About() {
   const { t } = useTranslation(); 
 
   return (
-    <Box sx={{ flexGrow: 1, paddingTop: '1%' }}>
+    <Box sx={{ flexGrow: 1, paddingTop: '5%', paddingBottom: '5%' }}>
       <Grid container spacing={2} sx={{ textAlign: 'start' }}>
         <Grid size={{ xs: 12, sm: 4, md: 4 }}>
           <Typography variant='h5'>{t('Summary')}</Typography>
