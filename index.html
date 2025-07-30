@@ -1,12 +1,501 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio | Frontend Developer</title>
-    </head>    
-    <body>
-        Portfolio | Frontend Developer hello
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Frontend Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #e2e8f0;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+        }
+        
+        .skill-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-icon:hover {
+            transform: scale(1.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active::after {
+            width: 100%;
+        }
+        
+        .blob {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(90deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+            border-radius: 50%;
+            filter: blur(50px);
+            z-index: -1;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(30px, 30px) rotate(10deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+        
+        .blob:nth-child(2) {
+            animation-delay: 2s;
+            right: 10%;
+            top: 20%;
+        }
+        
+        .blob:nth-child(3) {
+            animation-delay: 4s;
+            left: 10%;
+            bottom: 20%;
+        }
+    </style>
+</head>
+<body>
+    <header class="fixed w-full z-50 bg-gray-900/80 backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-4">
+            <nav class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold gradient-text">My Portfolio</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#portfolio" class="nav-link">Portfolio</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </nav>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800/95 px-6 py-4">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </header>
 
+    <section id="home" class="min-h-screen flex items-center relative overflow-hidden">
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        
+        <div class="container mx-auto px-6 py-20 md:py-0">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                        Let's Turn Your <span class="gradient-text">Ideas</span><br>
+                        Into Code.
+                    </h1>
+                    <p class="text-xl text-gray-300 mb-8">
+                        I'm <span class="font-semibold text-blue-400">HATİCE AKGÜL KATRANCI</span>, a Frontend Developer focused on React. I design and develop user-friendly interfaces.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#portfolio" class="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-medium hover:opacity-90 transition duration-300">
+                            View My Projects
+                        </a>
+                        <a href="#contact" class="px-8 py-3 border border-blue-400 text-blue-400 rounded-lg font-medium hover:bg-blue-400 hover:text-gray-900 transition duration-300">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1">
+                            <div class="w-full h-full rounded-full bg-gray-800 overflow-hidden">
+                                <div class="w-full h-full flex items-center justify-center text-6xl">
+                                    <i class="fas fa-user text-gray-600"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-5 -right-5 bg-gray-800 p-3 rounded-lg shadow-lg border border-gray-700">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center mr-2">
+                                    <i class="fas fa-check text-white"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400">Currently</p>
+                                    <p class="font-medium">Available</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-gray-800/50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">
+                <span class="gradient-text">About Me</span>
+            </h2>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
+                    <div class="w-48 h-48 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1">
+                        <div class="w-full h-full rounded-full bg-gray-800 overflow-hidden">
+                            <div class="w-full h-full flex items-center justify-center text-6xl">
+                                <i class="fas fa-user text-gray-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <p class="text-lg text-gray-300 mb-6">
+                        My passion for software combines with a drive to perfect the user experience. I have been working with web technologies for over 5 years and developing modern frontend solutions.
+                    </p>
+                    <p class="text-lg text-gray-300 mb-6">
+                        I am proficient in the React ecosystem and experienced with server-side rendering (SSR) and static site generation (SSG) using Next.js. I prioritize writing clean, readable, and maintainable code.
+                    </p>
+                    <p class="text-lg text-gray-300">
+                        In my free time, I contribute to open-source projects and learn new technologies. I am passionate about continuous learning and self-improvement.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">
+                <span class="gradient-text">My Skills</span>
+            </h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-gray-800/50 rounded-lg p-6 flex flex-col items-center skill-icon">
+                    <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fab fa-html5 text-3xl text-orange-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">HTML5</h3>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-orange-500 h-2 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800/50 rounded-lg p-6 flex flex-col items-center skill-icon">
+                    <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fab fa-css3-alt text-3xl text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">CSS3</h3>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800/50 rounded-lg p-6 flex flex-col items-center skill-icon">
+                    <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fab fa-js text-3xl text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">JavaScript</h3>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-yellow-400 h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800/50 rounded-lg p-6 flex flex-col items-center skill-icon">
+                    <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fab fa-react text-3xl text-blue-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">React.js</h3>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-blue-400 h-2 rounded-full" style="width: 88%"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800/50 rounded-lg p-6 flex flex-col items-center skill-icon">
+                    <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-bolt text-3xl text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Next.js</h3>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-purple-500 h-2 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800/50 rounded-lg p-6 flex flex-col items-center skill-icon">
+                    <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fab fa-git-alt text-3xl text-red-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Git</h3>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-red-500 h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800/50 rounded-lg p-6 flex flex-col items-center skill-icon">
+                    <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-server text-3xl text-green-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">RESTful APIs</h3>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-green-500 h-2 rounded-full" style="width: 82%"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800/50 rounded-lg p-6 flex flex-col items-center skill-icon">
+                    <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-mobile-alt text-3xl text-indigo-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Responsive Design</h3>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-indigo-500 h-2 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-20 bg-gray-800/50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">
+                <span class="gradient-text">My Projects</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-project-diagram text-6xl text-white opacity-30"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">E-commerce Platform</h3>
+                        <p class="text-gray-300 mb-4">A fully responsive e-commerce platform developed with Next.js. Includes product filtering, cart functionality, and payment integrations.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="px-4 py-2 bg-blue-500 rounded-lg text-sm font-medium hover:bg-blue-600 transition duration-300">View Demo</a>
+                            <a href="#" class="px-4 py-2 bg-gray-700 rounded-lg text-sm font-medium hover:bg-gray-600 transition duration-300">
+                                <i class="fab fa-github mr-1"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-pink-600 flex items-center justify-center">
+                        <i class="fas fa-chart-line text-6xl text-white opacity-30"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Finance Dashboard</h3>
+                        <p class="text-gray-300 mb-4">An interactive finance dashboard developed using React and Chart.js. Features real-time data visualization.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="px-4 py-2 bg-blue-500 rounded-lg text-sm font-medium hover:bg-blue-600 transition duration-300">View Demo</a>
+                            <a href="#" class="px-4 py-2 bg-gray-700 rounded-lg text-sm font-medium hover:bg-gray-600 transition duration-300">
+                                <i class="fab fa-github mr-1"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-48 bg-gradient-to-r from-green-500 to-teal-600 flex items-center justify-center">
+                        <i class="fas fa-tasks text-6xl text-white opacity-30"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Task Management Application</h3>
+                        <p class="text-gray-300 mb-4">A real-time task management application powered by Firebase backend. Includes drag & drop functionality and user authentication.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="px-4 py-2 bg-blue-500 rounded-lg text-sm font-medium hover:bg-blue-600 transition duration-300">View Demo</a>
+                            <a href="#" class="px-4 py-2 bg-gray-700 rounded-lg text-sm font-medium hover:bg-gray-600 transition duration-300">
+                                <i class="fab fa-github mr-1"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">
+                <span class="gradient-text">Get in Touch</span>
+            </h2>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h3 class="text-xl font-semibold mb-4">Contact Me</h3>
+                    <p class="text-gray-300 mb-6">If you'd like to discuss a project or make a job offer, you can get in touch by filling out the form below or by sending an email directly.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">Email</p>
+                                <p class="font-medium">katrancihatice@icloud.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">Location</p>
+                                <p class="font-medium">Istanbul, Turkey</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="text-lg font-semibold mb-4">Social Media</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/in/haticekatranci/" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-blue-500 transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/haticekatranciakgul" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-gray-500 transition duration-300">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://x.com/KatranciHatice" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-blue-400 transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/a_frontend_developer/" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-pink-500 transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Enter your name">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Enter your email address">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Your Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Write your message here"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-medium hover:opacity-90 transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 bg-gray-900/80">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="#" class="text-2xl font-bold gradient-text">My Portfolio</a>
+                </div>
+                <div class="flex space-x-6 mb-4 md:mb-0">
+                    <a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a>
+                    <a href="#about" class="text-gray-400 hover:text-white transition duration-300">About</a>
+                    <a href="#skills" class="text-gray-400 hover:text-white transition duration-300">Skills</a>
+                    <a href="#portfolio" class="text-gray-400 hover:text-white transition duration-300">Portfolio</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a>
+                </div>
+                <div class="text-gray-400 text-sm">
+                    © 2025 HATİCE AKGÜL KATRANCI. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Highlight active navigation link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 300)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
 </html>
